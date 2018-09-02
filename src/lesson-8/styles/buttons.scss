@@ -1,0 +1,33 @@
+@import './mixins';
+@import './variables';
+
+$btn-font-color:#fff;
+@mixin btn-primary-color {
+    background-color: $primary-color-darken;
+    border-color: $primary-color-darken;
+}
+.btn {
+    @include btn-reset-default;
+    padding: 10px 15px;
+    text-align: center;
+    color: $btn-font-color;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    transition: all 400ms;
+    &_primary {
+        background-color: #ff0079;
+        border-color: $primary-color;
+        &:hover {
+            background-color: $primary-color-darken;
+            border-color: $primary-color-darken;
+        }
+    }
+    &_bordered {
+        border-color: $btn-font-color;
+        &:hover {
+            @include btn-primary-color;
+        
+        }
+    }
+}
